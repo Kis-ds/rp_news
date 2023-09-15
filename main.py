@@ -26,7 +26,7 @@ btm_mg = 10
 # 06_2023-09-14_complete.xlsx
 
 ################# DATA LOAD
-df = pd.read_excel('./resource/07_2023-09-15_complete.xlsx')
+df = pd.read_excel('./resource/08_2023-09-15_complete.xlsx')
 # st.dataframe(df)
 
 
