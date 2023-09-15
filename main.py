@@ -22,10 +22,11 @@ left_mg = 0
 right_mg = 10
 top_mg = 0
 btm_mg = 10
-
+#
+# 06_2023-09-14_complete.xlsx
 
 ################# DATA LOAD
-df = pd.read_excel('./resource/06_2023-09-14_complete.xlsx')
+df = pd.read_excel('./resource/07_2023-09-15_complete.xlsx')
 # st.dataframe(df)
 
 
