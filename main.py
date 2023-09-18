@@ -45,7 +45,7 @@ st.sidebar.header("Side Bar")
 white_space_1, data_space, white_space_2 = st.columns([0.1, 0.8, 0.1])
 
 with white_space_1:
-    st.text('여백1')
+    st.empty()
 
 with data_space :
     ######################### HEAD
