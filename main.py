@@ -77,16 +77,16 @@ with data_space :
         # 안되면 여기다 예전 코드 넣기 약속~
 
         fig_amt = df_pivot.iplot(kind='bar', barmode='stack', asFigure=True, dimensions=(400,400),
-                                 colors=('#ff4388', '#fe7e22', '#fbc120', '#4b1a84'))  # #92b0d2, '#2f8bcc', '#019875', '#dc9094'
+                                 colors=('#7f999f','#a2a9cd',  '#77adda', '#85d3e6', '#0eccfb', '#2ebbc9'))  # '#ff4388', '#fe7e22', '#fbc120', '#4b1a84'
         fig_amt.update_layout(margin_l=left_mg, margin_r=right_mg, margin_t=top_mg, margin_b=btm_mg,
-                              plot_bgcolor='#151121', paper_bgcolor='#0e1117',font_color="blue",
-                              legend=dict(bgcolor='black', yanchor='top', y=-0.1, xanchor='left',
+                              plot_bgcolor='white', paper_bgcolor='white',font_color="black",       #plot_bgcolor='#151121', paper_bgcolor='#0e1117',font_color="blue",
+                              legend=dict(bgcolor='#e7f6fa', yanchor='top', y=-0.1, xanchor='left', #legend=dict(bgcolor='black', yanchor='top', y=-0.1, xanchor='left',
                                           x=0.015, orientation='h',font=dict( color='#d9d9d9')) #  orientation='h'
                               )
 
 
-        fig_amt.update_xaxes(showgrid=True, gridcolor='#332951',tickfont_color='#d9d9d9')  # x축의 격자선 색상을 빨간색으로 변경
-        fig_amt.update_yaxes(showgrid=True, gridcolor='#332951',tickfont_color='#d9d9d9')  # y축의 격자선 색상을 파란색으로 변경
+        fig_amt.update_xaxes(showgrid=True, gridcolor='#332951',tickfont_color='gray')  # #d9d9d9
+        fig_amt.update_yaxes(showgrid=True, gridcolor='#332951',tickfont_color='gray')  
         st.plotly_chart(fig_amt, use_container_width=True)
 
 
@@ -101,11 +101,12 @@ with data_space :
         pie_chart_df.columns = ['기업명', '카운트']
 
         fig_pie = pie_chart_df.iplot(kind='pie', labels='기업명', values='카운트', asFigure=True, dimensions=(400, 350),
-                       colors=('#ff4388', '#fe7e22', '#fbc120', '#4b1a84'))  # #92b0d2, '#2f8bcc', '#019875', '#dc9094'
+                       colors=('#a2b4cd','#a2a9cd',  '#77adda',  '#0eccfb', '#85d3e6','#2ebbc9'))  # '#ff4388', '#fe7e22', '#fbc120', '#4b1a84'
 
         fig_pie.update_layout(margin_l=left_mg, margin_r=right_mg, margin_t=top_mg, margin_b=btm_mg,
-                              plot_bgcolor='#151121', paper_bgcolor='#0e1117', font_color="white",
-                              legend=dict(bgcolor='black',orientation='v', font=dict(color='#d9d9d9'))  # orientation='h'
+                              plot_bgcolor='white', paper_bgcolor='white', font_color="black",
+                              #plot_bgcolor='#151121', paper_bgcolor='#0e1117', font_color="white"
+                              legend=dict(bgcolor='#e7f6fa',orientation='v', font=dict(color='#black'))  # orientation='h'
 
         )
 
