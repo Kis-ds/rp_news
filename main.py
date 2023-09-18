@@ -32,11 +32,6 @@ df = pd.read_excel('./resource/06_2023-09-15_complete.xlsx')
 
 
 
-################
-
-
-
-
 
 # 페이지 설정
 st.set_page_config(
@@ -74,19 +69,19 @@ with data_space :
         df_pivot = pd.pivot_table(df, index='날짜',
                                   columns='분류',
                                   values='제목', aggfunc='count').fillna(0)
-        # 안되면 여기다 예전 코드 넣기 약속~
 
         fig_amt = df_pivot.iplot(kind='bar', barmode='stack', asFigure=True, dimensions=(400,400),
-                                 colors=('#7f999f','#a2a9cd',  '#77adda', '#85d3e6', '#0eccfb', '#2ebbc9'))  # '#ff4388', '#fe7e22', '#fbc120', '#4b1a84'
+                                 colors=('#7f999f','#a2a9cd',  '#77adda', '#85d3e6', '#0eccfb', '#2ebbc9'))
+
         fig_amt.update_layout(margin_l=left_mg, margin_r=right_mg, margin_t=top_mg, margin_b=btm_mg,
-                              plot_bgcolor='white', paper_bgcolor='white',font_color="black",       #plot_bgcolor='#151121', paper_bgcolor='#0e1117',font_color="blue",
-                              legend=dict(bgcolor='#e7f6fa', yanchor='top', y=-0.1, xanchor='left', #legend=dict(bgcolor='black', yanchor='top', y=-0.1, xanchor='left',
-                                          x=0.015, orientation='h',font=dict( color='#d9d9d9')) #  orientation='h'
+                              plot_bgcolor='white', paper_bgcolor='white',font_color="black",
+                              legend=dict(bgcolor='#e7f6fa', yanchor='top', y=-0.1, xanchor='left',
+                                          x=0.015, orientation='h',font=dict( color='black')) #  orientation='h'
                               )
 
 
-        fig_amt.update_xaxes(showgrid=True, gridcolor='#332951',tickfont_color='gray')  # #d9d9d9
-        fig_amt.update_yaxes(showgrid=True, gridcolor='#332951',tickfont_color='gray')  
+        fig_amt.update_xaxes(showgrid=True, gridcolor='#332951',tickfont_color='black')
+        fig_amt.update_yaxes(showgrid=True, gridcolor='#332951',tickfont_color='black')
         st.plotly_chart(fig_amt, use_container_width=True)
 
 
@@ -97,16 +92,15 @@ with data_space :
             unsafe_allow_html=True)
         st.markdown('<h3 style="text-align:center">   </h3>', unsafe_allow_html=True)
 
-        pie_chart_df = pd.DataFrame(df[df.기업명 != 'No_Company'].기업명.value_counts()).reset_index()
+        pie_chart_df = pd.DataFrame(df[df.기업명 != 'No_Company'].기업명.value_counts()).reset_index()[:10]
         pie_chart_df.columns = ['기업명', '카운트']
 
         fig_pie = pie_chart_df.iplot(kind='pie', labels='기업명', values='카운트', asFigure=True, dimensions=(400, 350),
                        colors=('#a2b4cd','#a2a9cd',  '#77adda',  '#0eccfb', '#85d3e6','#2ebbc9'))  # '#ff4388', '#fe7e22', '#fbc120', '#4b1a84'
 
         fig_pie.update_layout(margin_l=left_mg, margin_r=right_mg, margin_t=top_mg, margin_b=btm_mg,
-                              plot_bgcolor='white', paper_bgcolor='white', font_color="black",
-                              #plot_bgcolor='#151121', paper_bgcolor='#0e1117', font_color="white"
-                              legend=dict(bgcolor='#e7f6fa',orientation='v', font=dict(color='#black'))  # orientation='h'
+                              plot_bgcolor='white', paper_bgcolor='white', font_color="black",      #plot_bgcolor='#151121', paper_bgcolor='#0e1117',font_color="blue",
+                              legend=dict(bgcolor='#e7f6fa',orientation='v', font=dict(color='black'))  # orientation='h' #d9d9d9
 
         )
 
@@ -127,4 +121,8 @@ with white_space_2 :
 # extra : https://extras.streamlit.app/Dataframe%20explorer%20UI
 # iplot 스타일 설정 : https://wikidocs.net/186155 (iplot쓰려면 import plotly.graph_objects as go / # import cufflinks as cf  두개 필수 )
 # pie chart 참고 : https://sks8410.tistory.com/35
+# 색상 추천 사이트 : https://www.colorhexa.com/34b5d5
+
+# https://yeomss.tistory.com/301
+
 
