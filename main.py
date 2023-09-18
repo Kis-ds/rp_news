@@ -112,7 +112,7 @@ with data_space :
     filtered_df = dataframe_explorer(df[['날짜', '분류', '기업명', '제목', '본문요약', 'url']], case=False)
     st.dataframe(filtered_df, use_container_width=True)
 with white_space_2 :
-    st.text('여백2')
+    st.empty()
 
 
 
