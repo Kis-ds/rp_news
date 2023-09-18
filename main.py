@@ -109,7 +109,7 @@ with data_space :
     ######################### 뉴스보여주기
     st.subheader('오늘의 이슈', help="오늘 뉴스 조회화면")
     st.text(f'오늘 수집된 주요 기사는 총 {df[df.날짜 == df.날짜.max()].shape[0]}건 입니다.')
-    filtered_df = dataframe_explorer(df, case=False)
+    filtered_df = dataframe_explorer(df[['날짜', '분류', '기업명', '제목', '본문요약', 'url']], case=False)
     st.dataframe(filtered_df, use_container_width=True)
 with white_space_2 :
     st.text('여백2')
