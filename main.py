@@ -80,8 +80,8 @@ with data_space :
                               )
 
 
-        fig_amt.update_xaxes(showgrid=True, gridcolor='#332951',tickfont_color='black')
-        fig_amt.update_yaxes(showgrid=True, gridcolor='#332951',tickfont_color='black')
+        fig_amt.update_xaxes(showgrid=True, gridcolor='#adb0c2',tickfont_color='black')
+        fig_amt.update_yaxes(showgrid=True, gridcolor='#adb0c2',tickfont_color='black')  # 332951
         st.plotly_chart(fig_amt, use_container_width=True)
 
 
