@@ -28,17 +28,10 @@ st.set_page_config(
     initial_sidebar_state="collapsed"  
 )
 
-# with open('style.css') as f:
-#    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-hide_table_row_index = """
-            <style>
-            thead tr th:first-child {display:none}
-            tbody th {display:none}
-            .font{font-size:10px;}
-            .col_heading {text-align: center !important}
-            </style>
-            """
+
 
 ################# Style option
 left_mg = 0
