@@ -143,7 +143,7 @@ with data_space :
     df2 = df2.drop([133, 141], axis=0).reset_index(drop=True)
     ###
     df2.index = df2.index + 1
-    df2 = df2[['날짜', '분류', '기업명', '제목_url', '본문요약']]
+    df2 = df2[['날짜', '분류', '기업명', '제목_url']]   # , '본문요약'
     
     # df2['url'] = df2['url'].apply(make_clickable)
 
