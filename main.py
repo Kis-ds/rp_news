@@ -142,7 +142,6 @@ with data_space :
     # df2['url'] = df2['url'].apply(make_clickable)
 
     df2 = df2.to_html(escape=False)
-
     st.write(df2, unsafe_allow_html=True)
 with white_space_2 :
     st.empty()
