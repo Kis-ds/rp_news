@@ -11,7 +11,6 @@ import pandas as pd
 import streamlit as st
 from st_aggrid import AgGrid
 import numpy
-from streamlit_extras.dataframe_explorer import dataframe_explorer
 import plotly.express as px
 import plotly.graph_objects as go
 import cufflinks as cf
@@ -136,8 +135,6 @@ with data_space :
     df2 = df2.to_html(escape=False)
 
     st.write(df2, unsafe_allow_html=True)
-    # filtered_df = dataframe_explorer(df[['날짜', '분류', '기업명', '제목', '본문요약', 'url']], case=False)
-    # st.dataframe(filtered_df, use_container_width=True)
 with white_space_2 :
     st.empty()
 
