@@ -63,11 +63,11 @@ with data_space :
     ######################### HEAD
     # 메인 콘텐츠 영역에 내용 추가
     st.title(":newspaper:퇴직연금 동향 뉴스")
-    st.write("다음은 금일 조회한 퇴직연금 관련 뉴스 리스트입니다. (조회일자 기준 최근 7일 기사 확인가능)")
+    st.write("다음은 금일 수집한 퇴직연금 관련 뉴스 리스트입니다. (조회일자 기준 최근 7일 기사 확인이 가능합니다.)")
     ''
     ''
     ######################### 차트 화면
-    st.subheader('뉴스 분석', help="수집한 결과를 차트로 파악하기 쉽게 도식화 해두었습니다.")
+    st.subheader('뉴스 분석', help="수집한 결과를 차트로 파악하기 쉽게 도식화 해두었습니다.\- 주별뉴스현황 : 카테고리별로 기사 발행 현황에 대해 막대차트로 확인가능합니다.\n- 기업관련 기사 조회 : 기업별로 발행한 퇴직연금 관련 기사 수를 파이차트로 비중을 도식화 하였습니다. ")
     subject_chart, company_chart = st.columns(2, gap="large")
 
 
@@ -99,7 +99,7 @@ with data_space :
 
     with company_chart:
         st.markdown(
-            '<div style = "color:white; font-size: 16px; text-align:center; background-color: #2d3d4a">기업</div>',
+            '<div style = "color:white; font-size: 16px; text-align:center; background-color: #2d3d4a">기업관련 기사 조회</div>',
             # #403466  2d3d4a
             unsafe_allow_html=True)
         st.markdown('<h3 style="text-align:center">   </h3>', unsafe_allow_html=True)
