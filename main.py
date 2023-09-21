@@ -17,23 +17,28 @@ import cufflinks as cf
 
 
 
-
-
 def make_clickable(get_list):
     link, title = get_list[0], get_list[1]
     # text = link.split('=')[1]
     return f'<a target="aboutlink" href="{link}">{title}</a>'
 
-
-
 # 페이지 설정
 st.set_page_config(
-    layout="wide",  # wide layout은 sidebar를 더 넓게 만듭니다.
-    initial_sidebar_state="collapsed"  # 초기에 sidebar가 확장된 상태로 표시됩니다.
+    layout="wide",  
+    initial_sidebar_state="collapsed"  
 )
 
-with open('style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+# with open('style.css') as f:
+#    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+hide_table_row_index = """
+            <style>
+            thead tr th:first-child {display:none}
+            tbody th {display:none}
+            .font{font-size:10px;}
+            .col_heading {text-align: center !important}
+            </style>
+            """
 
 ################# Style option
 left_mg = 0
@@ -146,6 +151,7 @@ with data_space :
     df2 = df2.to_html(escape=False)
 
     st.write(df2, unsafe_allow_html=True)
+    st.markdown(hide_table_row_index, unsafe_allow_html=True)
 with white_space_2 :
     st.empty()
 
