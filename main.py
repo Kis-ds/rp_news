@@ -17,6 +17,19 @@ import plotly.graph_objects as go
 import cufflinks as cf
 
 
+
+
+def make_clickable(get_list):
+    link, title = get_list[0], get_list[1]
+    # text = link.split('=')[1]
+    return f'<a target="aboutlink" href="{link}">{title}</a>'
+
+# Style READ
+# with open('style2.css') as f:
+#     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+
+
 ################# Style option
 left_mg = 0
 right_mg = 10
@@ -27,8 +40,8 @@ btm_mg = 10
 
 ################# DATA LOAD
 df = pd.read_excel('./resource/08_2023-09-21_complete.xlsx')   # 06_2023-09-15_complete.xlsx
-# st.dataframe(df)
-
+df['날짜'] = (pd.to_datetime(df['날짜']).dt.strftime('%Y-%m-%d'))
+df['날짜'] = df['날짜'].astype(str)
 
 
 
@@ -109,8 +122,22 @@ with data_space :
     ######################### 뉴스보여주기
     st.subheader('오늘의 이슈', help="오늘 뉴스 조회화면")
     st.text(f'오늘 수집된 주요 기사는 총 {df[df.날짜 == df.날짜.max()].shape[0]}건 입니다.')
-    filtered_df = dataframe_explorer(df[['날짜', '분류', '기업명', '제목', '본문요약', 'url']], case=False)
-    st.dataframe(filtered_df, use_container_width=True)
+
+    df2 = df[['날짜','분류','기업명','제목','본문요약','url']]
+    title_list = []
+    for idx, row in df2.iterrows():
+        tmp = make_clickable([row['url'], row['제목']])
+        title_list.append(tmp)
+
+    df2['제목_url'] = title_list
+    df2 = df2[['날짜', '분류', '기업명', '제목_url', '본문요약']]
+    # df2['url'] = df2['url'].apply(make_clickable)
+
+    df2 = df2.to_html(escape=False)
+
+    st.write(df2, unsafe_allow_html=True)
+    # filtered_df = dataframe_explorer(df[['날짜', '분류', '기업명', '제목', '본문요약', 'url']], case=False)
+    # st.dataframe(filtered_df, use_container_width=True)
 with white_space_2 :
     st.empty()
 
@@ -124,5 +151,3 @@ with white_space_2 :
 # 색상 추천 사이트 : https://www.colorhexa.com/34b5d5
 
 # https://yeomss.tistory.com/301
-
-
