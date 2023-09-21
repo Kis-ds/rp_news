@@ -27,7 +27,6 @@ btm_mg = 10
 
 ################# DATA LOAD
 df = pd.read_excel('./resource/08_2023-09-21_complete.xlsx')   # 06_2023-09-15_complete.xlsx
-st.text(df.날짜.unique())
 # st.dataframe(df)
 
 
