@@ -144,7 +144,6 @@ with data_space :
     df2 = df2.to_html(escape=False)
 
     st.write(df2, unsafe_allow_html=True)
-    st.markdown(hide_table_row_index, unsafe_allow_html=True)
 with white_space_2 :
     st.empty()
 
