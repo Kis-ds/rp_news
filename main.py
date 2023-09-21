@@ -132,7 +132,10 @@ with data_space :
         title_list.append(tmp)
 
     df2['제목_url'] = title_list
+
+    ### 이건 추후에 지울것
     df2 = df2.drop([133, 141], axis=0).reset_index(drop=True)
+    ###
     df2.index = df2.index + 1
     df2 = df2[['날짜', '분류', '기업명', '제목_url', '본문요약']]
     
