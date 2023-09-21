@@ -16,17 +16,21 @@ import plotly.graph_objects as go
 import cufflinks as cf
 
 
-# 페이지 설정
-st.set_page_config(
-    layout="wide",  # wide layout은 sidebar를 더 넓게 만듭니다.
-    initial_sidebar_state="collapsed"  # 초기에 sidebar가 확장된 상태로 표시됩니다.
-)
+
+
 
 def make_clickable(get_list):
     link, title = get_list[0], get_list[1]
     # text = link.split('=')[1]
     return f'<a target="aboutlink" href="{link}">{title}</a>'
 
+
+
+# 페이지 설정
+st.set_page_config(
+    layout="wide",  # wide layout은 sidebar를 더 넓게 만듭니다.
+    initial_sidebar_state="collapsed"  # 초기에 sidebar가 확장된 상태로 표시됩니다.
+)
 
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
