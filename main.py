@@ -104,7 +104,7 @@ with data_space :
             unsafe_allow_html=True)
         st.markdown('<h3 style="text-align:center">   </h3>', unsafe_allow_html=True)
 
-        pie_chart_df = pd.DataFrame(df[df.기업명 != 'No_Company'].기업명.value_counts()).reset_index()[:10]
+        pie_chart_df = pd.DataFrame(df[df.기업명 != '-'].기업명.value_counts()).reset_index()[:10]
         pie_chart_df.columns = ['기업명', '카운트']
 
         fig_pie = pie_chart_df.iplot(kind='pie', labels='기업명', values='카운트', asFigure=True, dimensions=(400, 350),
