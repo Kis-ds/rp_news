@@ -1,0 +1,18 @@
+
+[data-testid="element-container"] > [class="stMarkdown"] > [class="css-5rimss e1nzilvr5"] > [class="dataframe"] {
+    background-color : rgba(247, 247, 247);
+    text-align: center;
+    border: 2px solid white;
+    border-radius : 18px ;
+    padding : 20px ;
+    box-shadow:1px 3px 3.5px 0px gray;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+
+
+[data-testid="element-container"] > [class="stMarkdown"] > [class="css-5rimss e1nzilvr5"] > [class="dataframe"]> tr:first-child th   {
+    text-align: center;
+}
