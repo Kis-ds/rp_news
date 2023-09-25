@@ -150,7 +150,7 @@ with data_space :
     # df2 = df2.to_html(escape=False)
 
     df2.style.set_properties(**{'text-align': 'center'}).set_table_styles([{'selector': 'th', 'props': [('text-align', 'center')]}])
-    st.markdown('<style>.col_heading{text-align: center;}</style>', unsafe_allow_html=True)1
+    st.markdown('<style>.col_heading{text-align: center;}</style>', unsafe_allow_html=True)
     df2.columns = ['<div class="col_heading">'+col+'</div>' for col in df2.columns] 
     st.write(df2.to_html(escape=False), unsafe_allow_html=True)
 
