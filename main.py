@@ -174,3 +174,4 @@ with white_space_2 :
 # 색상 추천 사이트 : https://www.colorhexa.com/34b5d5
 
 # https://yeomss.tistory.com/301
+# streamlit dataframe header center정렬 :  https://discuss.streamlit.io/t/center-dataframe-header/51193/4
