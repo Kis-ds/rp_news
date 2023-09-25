@@ -148,11 +148,11 @@ with data_space :
     # df2['url'] = df2['url'].apply(make_clickable)
 
     df2 = df2.to_html(escape=False)
+    df2.style.set_properties(**{'text-align': 'center'}).set_table_styles([{'selector': 'th', 'props': [('text-align', 'center')]}])
     st.write(df2, unsafe_allow_html=True)
 
     # 이것만 빼기
     st.markdown(hide_table_row_index, unsafe_allow_html=True)
-    # st.markdown(hide_table_row_index, unsafe_allow_html=True)
 with white_space_2 :
     st.empty()
 
