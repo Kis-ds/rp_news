@@ -156,8 +156,8 @@ with data_space :
 
 
     
-    df2.style.set_properties(**{'text-align': 'center'}).set_table_styles([{'selector': 'th', 'props': [('text-align', 'center')]}])
-    st.write(df2, unsafe_allow_html=True)
+    # df2.style.set_properties(**{'text-align': 'center'}).set_table_styles([{'selector': 'th', 'props': [('text-align', 'center')]}])
+    # st.write(df2, unsafe_allow_html=True)
 
     # 이것만 빼기
     st.markdown(hide_table_row_index, unsafe_allow_html=True)
