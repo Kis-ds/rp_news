@@ -150,10 +150,16 @@ with data_space:
     tmp1 = df2[(df2['분류'].isin(radio_sel))].reset_index(drop=True)
     
     ################### 가운데 정렬 설정
-    df2.style.set_properties(**{'text-align': 'center'}).set_table_styles(
+    # df2.style.set_properties(**{'text-align': 'center'}).set_table_styles(
+    #     [{'selector': 'th', 'props': [('text-align', 'center')]}])
+    # st.markdown('<style>.col_heading{text-align: center;}</style>', unsafe_allow_html=True)
+    # df2.columns = ['<div class="col_heading">' + col + '</div>' for col in df2.columns]
+    # st.write(tmp1.to_html(escape=False), unsafe_allow_html=True)
+
+    tmp1.style.set_properties(**{'text-align': 'center'}).set_table_styles(
         [{'selector': 'th', 'props': [('text-align', 'center')]}])
     st.markdown('<style>.col_heading{text-align: center;}</style>', unsafe_allow_html=True)
-    df2.columns = ['<div class="col_heading">' + col + '</div>' for col in df2.columns]
+    tmp1.columns = ['<div class="col_heading">' + col + '</div>' for col in tmp1.columns]
     st.write(tmp1.to_html(escape=False), unsafe_allow_html=True)
 
 
