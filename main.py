@@ -146,7 +146,7 @@ with data_space:
     radio_sel = st.multiselect(f"수집 뉴스 조회", list(df2.분류.unique()), default=list(df2.분류.unique()), key='part2_1',
                                max_selections=4)
     tmp1 = df2[(df2['분류'].isin(radio_sel))].reset_index(drop=True)
-
+    tmp1.index = tmp1.index + 1
     ################### 가운데 정렬 설정
     # df2.style.set_properties(**{'text-align': 'center'}).set_table_styles(
     #     [{'selector': 'th', 'props': [('text-align', 'center')]}])
@@ -173,6 +173,9 @@ with white_space_2:
 # https://yeomss.tistory.com/301
 # streamlit dataframe header center정렬 :  https://discuss.streamlit.io/t/center-dataframe-header/51193/4
 
+
+
+#-------------------------------------------------------------------------------------
 # # import pickle
 # # import streamlit as st
 # # from streamlit_lottie import st_lottie
