@@ -40,7 +40,9 @@ hide_table_row_index = """
             """
 
 ################# DATA LOAD
-df = pd.read_excel('./resource/04_#2023-10-04_complete.xlsx')  # 06_2023-09-15_complete.xlsx
+# df = pd.read_excel('./resource/04_#2023-10-04_complete.xlsx')  # 06_2023-09-15_complete.xlsx
+TODAY = datetime.today().strftime("%Y-%m-%d")
+df = pd.read_excel(f'./resource/04_#{TODAY}_complete.xlsx')
 df['날짜'] = (pd.to_datetime(df['날짜']).dt.strftime('%Y-%m-%d'))
 df['날짜'] = df['날짜'].astype(str)
 
