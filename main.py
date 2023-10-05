@@ -130,12 +130,12 @@ with data_space:
         tmp = make_clickable([row['url'], row['제목']])
         title_list.append(tmp)
 
-    df2['제목_url'] = title_list
+    df2['기사제목'] = title_list
 
     df2.index = df2.index + 1
 
     ###################
-    df2 = df2[['날짜', '분류', '기업명', '제목_url', '본문요약']]
+    df2 = df2[['날짜', '분류', '기업명', '기사제목', '본문요약']]
 
     ## 라디오 추가
     radio_sel = st.multiselect(f"수집 뉴스 조회", list(df2.분류.unique()), default=list(df2.분류.unique()), key='part2_1',
