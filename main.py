@@ -15,6 +15,11 @@ def make_clickable(get_list):
     # text = link.split('=')[1]
     return f'<a target="aboutlink" href="{link}">{title}</a>'
 
+def loadPickle(path):
+    with open(path, 'rb') as fr:
+        df = pickle.load(fr)
+    return df
+
 
 # 페이지 설정
 st.set_page_config(
@@ -40,10 +45,11 @@ hide_table_row_index = """
             """
 
 ################# DATA LOAD
-df = pd.read_excel('./resource/04_UPLOAD.xlsx')
-# df = pd.read_excel('./resource/04_2023-10-05_complete.xlsx')  # 06_2023-09-15_complete.xlsx
-# TODAY = datetime.today().strftime("%Y-%m-%d")
-# df = pd.read_excel(f'./resource/04_#{TODAY}_complete.xlsx')
+
+# DATA LOAD
+df = loadPickle('./resource/04_UPLOAD.pkl')  # all_full_db_060708
+
+# df = pd.read_excel('./resource/04_UPLOAD.xlsx')
 df['날짜'] = (pd.to_datetime(df['날짜']).dt.strftime('%Y-%m-%d'))
 df['날짜'] = df['날짜'].astype(str)
 
