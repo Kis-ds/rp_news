@@ -47,9 +47,9 @@ hide_table_row_index = """
 ################# DATA LOAD
 
 # DATA LOAD
-df = loadPickle('./resource/04_UPLOAD.pkl')  # all_full_db_060708
+# df = loadPickle('./resource/04_UPLOAD.pkl')  # all_full_db_060708
 
-# df = pd.read_excel('./resource/04_UPLOAD.xlsx')
+df = pd.read_excel('./resource/04_UPLOAD.xlsx')
 df['날짜'] = (pd.to_datetime(df['날짜']).dt.strftime('%Y-%m-%d'))
 df['날짜'] = df['날짜'].astype(str)
 
