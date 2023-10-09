@@ -15,10 +15,10 @@ def make_clickable(get_list):
     # text = link.split('=')[1]
     return f'<a target="aboutlink" href="{link}">{title}</a>'
 
-def loadPickle(path):
-    with open(path, 'rb') as fr:
-        df = pickle.load(fr)
-    return df
+# def loadPickle(path):
+#     with open(path, 'rb') as fr:
+#         df = pickle.load(fr)
+#     return df
 
 
 # 페이지 설정
