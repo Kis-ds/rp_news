@@ -145,7 +145,7 @@ with data_space:
     df2 = df2[['날짜', '분류', '기업명', '기사제목', '본문요약']]
 
     ## 라디오 추가
-    radio_sel = st.multiselect(f"수집 뉴스 조회", list(df2.분류.unique()), default=list(df2.분류.unique()), key='part2_1',
+    radio_sel = st.multiselect(f" > 수집 뉴스 조회", list(df2.분류.unique()), default=list(df2.분류.unique()), key='part2_1',
                                max_selections=4)
     tmp1 = df2[(df2['분류'].isin(radio_sel))].reset_index(drop=True)
     tmp1.index = tmp1.index + 1
