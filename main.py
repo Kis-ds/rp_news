@@ -162,6 +162,38 @@ with data_space:
     tmp1.columns = ['<div class="col_heading">' + col + '</div>' for col in tmp1.columns]
     st.write(tmp1.to_html(escape=False), unsafe_allow_html=True)
 
+
+#################### 추가
+    st.markdown(
+        """
+        <style>
+        table {
+            width: 100%;
+        }
+        th:nth-child(1), td:nth-child(1) {
+            width: 5%;
+        }
+        th:nth-child(2), td:nth-child(2) {
+            width: 8%;
+        }
+        th:nth-child(3), td:nth-child(3) {
+            width: 13%;
+        }
+        th:nth-child(4), td:nth-child(4) {
+            width: 10%;
+        }
+        th:nth-child(5), td:nth-child(5) {
+            width: 20%;
+        }
+        th:nth-child(6), td:nth-child(6) {
+            width: 50%;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+################### 추가
+
 with white_space_2:
     st.empty()
 
